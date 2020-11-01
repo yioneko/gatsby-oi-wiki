@@ -6,15 +6,13 @@ const darkModeSwitch = `window.onthemechange = function (settings) {
   const fallback = localStorage.settings &&
     JSON.parse(localStorage.settings).darkMode.type
   const darkOpt = settings !== undefined ? settings.darkMode.type : fallback
-  let themeClass = 'themeAuto'
+  let themeClass = 'auto'
   if (darkOpt === undefined || darkOpt === 'user-preference') {
-    // themeClass = 'themeAuto'
+    // themeClass = 'auto'
   } else {
-    themeClass = darkOpt === 'always-on' ? 'themeDark' : 'themeLight'
+    themeClass = darkOpt === 'always-on' ? 'dark' : 'light'
   }
-  const docEl = document.querySelector('html')
-  docEl.classList.remove('themeLight', 'themeDark', 'themeAuto')
-  docEl.classList.add(themeClass)
+  document.querySelector('html').setAttribute('data-theme', themeClass)
 }
 
 window.onthemechange()`

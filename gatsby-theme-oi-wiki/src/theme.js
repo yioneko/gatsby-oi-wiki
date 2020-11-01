@@ -74,7 +74,7 @@ function applyDefaults (theme, ...keys) {
 
 const lightCss = {
   '@global': {
-    '.themeLight': {
+    'html[data-theme=light]': {
       '--primary-color': htr(lightColor.primary.main),
       '--footer-bg': htr(grey[200]),
       '--footer-text': htr(grey[700]),
@@ -97,7 +97,7 @@ const lightCss = {
 
 const darkCss = {
   '@global': {
-    '.themeDark': {
+    'html[data-theme=dark]': {
       '--primary-color': htr(darkColor.primary.main),
       '--paper-color': htr(darkColor.background.paper),
       '--bg-color': htr(darkColor.background.default),
@@ -131,9 +131,9 @@ export const DarkCssBaseline = getThemeCssEl(withStyles(() => darkCss))
 export const AutoCssBaseline = getThemeCssEl(withStyles(() => {
   return {
     '@global': {
-      '.themeAuto': lightCss['@global']['.themeLight'],
+      'html[data-theme=auto]': lightCss['@global']['html[data-theme=light]'],
       '@media (prefers-color-scheme: dark)': {
-        '.themeAuto': darkCss['@global']['.themeDark'],
+        'html[data-theme=auto]': darkCss['@global']['html[data-theme=dark]'],
       },
     },
   }
