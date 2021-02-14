@@ -13,6 +13,7 @@ import { Helmet } from 'react-helmet'
 // import useDarkMode from '../lib/useDarkMode'
 import scrollbar from '../styles/scrollbar'
 import { CustomCssBaseline, adaptiveTheme, LightCssBaseline, DarkCssBaseline, AutoCssBaseline } from '../theme'
+import ProvisionedStylesBaseline from './ProvisionedStylesBaseline'
 import Comment from './Comment'
 import BackTop from './BackTop'
 import Footer from './Footer'
@@ -170,6 +171,7 @@ function StyledLayout (props) {
       <LightCssBaseline />
       <DarkCssBaseline />
       <AutoCssBaseline />
+      <ProvisionedStylesBaseline />
       <MyLayout {...props} />
     </ThemeProvider>
   )

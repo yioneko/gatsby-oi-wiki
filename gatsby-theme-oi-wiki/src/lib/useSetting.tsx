@@ -10,6 +10,7 @@ export interface Settings {
   }
   theme: {
     navColor: string;
+    secondaryColor: string;
   }
 }
 
@@ -23,6 +24,7 @@ const defaultSettings: Settings = {
   },
   theme: {
     navColor: 'auto',
+    secondaryColor: '0, 255, 0, 1',
   },
 }
 
